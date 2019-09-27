@@ -1,16 +1,18 @@
 <h1 align="center">PYbot Botnet</h1>
 
-![preview](/preview.png)
+<p align="center">
+    <img width="629" height="370" src="https://raw.githubusercontent.com/WodxTV/PYbot/master/preview.png">
+</p>
 
 **PYbot** is a basic open source [denial of service](https://en.wikipedia.org/wiki/Denial-of-service_attack) [botnet](https://en.wikipedia.org/wiki/Botnet) system written in Python 3, consists of a connect and control server and a bot malware script.
 
 # CnC Commands
 Command | Description
 --------|------------
-cls \| clear | Clears the console window screen
-help \| ? \| | Shows list of commands
+help, ?, | Shows list of commands
 methods | Shows list of attack methods
-exit \| logout | Disconnects from the C&C server
+clear, cls | Clears the console window screen
+exit, logout | Disconnects from the C&C server
 .vse \<host> \<duration> | Starts a VSE flood attack
 .udp \<host> \<duration> \<size> | Starts a UDP flood attack
 .syn \<host> \<duration> | Starts a TCP SYN flood attack
