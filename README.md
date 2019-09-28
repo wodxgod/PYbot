@@ -40,7 +40,7 @@ exit, logout | Disconnects from the C&C server
 3. Change the host address and C&C port in the configuration section in [bot.py](/bot.py) to your server address and C&C port.
 4. Start the CnC server by executing the command: `$ python cnc.py <cnc port>`.
 5. Add accounts in [logins.txt](/logins.txt) by using the format: `username:password`.
-6. Connect to the server using [PuTTy](https://www.putty.org/) via raw socket connection.
+6. Connect to the server using [PuTTY](https://www.putty.org/) via raw socket connection.
 
 *Compiling the malware and installing it on vulnerable devices won't be told, as it's highly illegal to do. Use of this project for illegal activities is at own risk! I'm not responsible for any of your taken actions!*
 
