@@ -41,8 +41,9 @@ def find_login(username, password):
         if x.split(':')[0].lower() == username.lower() and x.split(':')[1] == password:
             return True
 
-def send(socket, data, escape=True):
-    data += Fore.RESET
+def send(socket, data, escape=True, reset=True):
+    if reset:
+        data += Fore.RESET
     if escape:
         data += '\r\n'
     socket.send(str.encode(data))
@@ -215,7 +216,7 @@ def handle_client(client, address):
     password = ''
     while 1:
         send(client, ansi_clear, False)
-        send(client, f'{Fore.MAGENTA}Password{Fore.LIGHTWHITE_EX}: ', False)
+        send(client, f'{Fore.MAGENTA}Password{Fore.LIGHTWHITE_EX}:{Fore.BLACK} ', False, False)
         while not password.strip():
             password = client.recv(1024).decode().strip()
         break
