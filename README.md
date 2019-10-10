@@ -47,7 +47,7 @@ exit, logout | Disconnects from the C&C server
 # Author
 - **WodX**
     - [Github](https://github.com/WodXTV)
-    - [Twitter](https://twitter.com/wodxofficial)
+    - [Twitter](https://twitter.com/wodsex)
     - [Discord](https://profiles.pw/profile/621044372951269417)
     - [PayPal.me](https://www.paypal.com/paypalme2/wodx)
 
