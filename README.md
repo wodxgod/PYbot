@@ -26,7 +26,7 @@ exit, logout | Disconnects from the C&C server
     - Floods target with SYN TCP packets to random destination ports in range 1-65535.
     - Read more about the attack method [here](https://en.wikipedia.org/wiki/SYN_flood).
 - **[VSE](https://en.wikipedia.org/wiki/Source_(game_engine)) Flood**
-    - Floods target with [VSE query requests](https://developer.valvesoftware.com/wiki/Server_queries) to destination port 27015 (Source Engine port).
+    - Floods target with [VSE queries](https://developer.valvesoftware.com/wiki/Server_queries) to destination port 27015 (Source Engine port).
     - Designed to take down Source based game servers by sending legitimate traffic to the target server.
 
 # Layer 7 Attack Vectors
