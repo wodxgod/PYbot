@@ -42,7 +42,7 @@ exit, logout | Disconnects from the C&C server
 5. Add accounts in [logins.txt](/logins.txt) by using the format: `username:password`.
 6. Connect to the server using [PuTTY](https://www.putty.org/) via raw socket connection.
 
-*Compiling the malware and installing it on vulnerable devices won't be told, as it's highly illegal to do. Use of this project for illegal activities is at own risk! I'm not responsible for any of your taken actions!*
+*Compiling the malware and installing it on vulnerable devices won't be told, as it's highly illegal to get remote access to a device without permission. Use of this project for illegal activities is at own risk! I'm not responsible for any of your taken actions!*
 
 # Author
 - **WodX**
