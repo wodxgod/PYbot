@@ -13,18 +13,21 @@ help, ? | Shows list of commands
 methods | Shows list of attack methods
 clear, cls | Clears the console window screen
 exit, logout | Disconnects from the C&C server
-.vse \<host> \<duration> | Starts a VSE flood attack
-.udp \<host> \<duration> \<size> | Starts a UDP flood attack
-.syn \<host> \<duration> | Starts a TCP SYN flood attack
+.syn \<host> \<port> \<duration> | Starts a TCP SYN flood attack
+.tcp \<host> \<port> \<duration> \<size> | Starts a UDP junk flood attack
+.udp \<host> \<port> \<duration> \<size> | Starts a UDP junk flood attack
+.vse \<host> \<port> \<duration> | Starts a VSE flood attack
 .http \<host> \<duration> | Starts a HTTP GET request flood attack
 
 # Layer 4 Attack Vectors
-- **[UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) Flood**
-    - Floods target with trashed UDP packets with given size of bytes to random destination ports in range 1-65535.
-    - Read more about the attack method [here](https://en.wikipedia.org/wiki/UDP_flood_attack).
+- **[TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) Flood**
+    - Floods target with trashed TCP data packets.
 - **[TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) SYN Flood**
-    - Floods target with SYN TCP packets to random destination ports in range 1-65535.
+    - Floods target with SYNchronize TCP packets.
     - Read more about the attack method [here](https://en.wikipedia.org/wiki/SYN_flood).
+- **[UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) Flood**
+    - Floods target with trashed UDP data packets.
+    - Read more about the attack method [here](https://en.wikipedia.org/wiki/UDP_flood_attack).
 - **[VSE](https://en.wikipedia.org/wiki/Source_(game_engine)) Flood**
     - Floods target with [VSE queries](https://developer.valvesoftware.com/wiki/Server_queries) to destination port 27015 (Source Engine port).
     - Designed to take down Source based game servers by sending legitimate traffic to the target server.
