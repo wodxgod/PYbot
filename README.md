@@ -14,7 +14,7 @@ methods | Shows list of attack methods
 clear, cls | Clears the console window screen
 exit, logout | Disconnects from the C&C server
 .syn \<host> \<port> \<duration> | Starts a TCP SYN flood attack
-.tcp \<host> \<port> \<duration> \<size> | Starts a UDP junk flood attack
+.tcp \<host> \<port> \<duration> \<size> | Starts a TCP junk flood attack
 .udp \<host> \<port> \<duration> \<size> | Starts a UDP junk flood attack
 .vse \<host> \<port> \<duration> | Starts a VSE flood attack
 .http \<host> \<duration> | Starts a HTTP GET request flood attack
