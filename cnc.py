@@ -10,8 +10,6 @@ import time
 import ipaddress
 from colorama import Fore, init
 
-# TODO: create a bot object
-
 bots = {}
 ansi_clear = '\033[2J\033[H'
 
