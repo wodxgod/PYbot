@@ -4,7 +4,7 @@
     <img width="629" height="370" src="https://raw.githubusercontent.com/WodxTV/PYbot/master/preview.png">
 </p>
 
-**PYbot** is a basic open source [denial of service](https://en.wikipedia.org/wiki/Denial-of-service_attack) [botnet](https://en.wikipedia.org/wiki/Botnet) system written in Python 3, consists of a connect and control server and a bot malware script. The system works the same way as a Qbot botnet.
+**PYbot** is a basic open source [denial of service](https://en.wikipedia.org/wiki/Denial-of-service_attack) [botnet](https://en.wikipedia.org/wiki/Botnet) system written in Python 3, consists of a connect and control server and a bot malware script.
 
 # C&C Commands
 Command | Description
@@ -39,7 +39,7 @@ exit, logout | Disconnects from the C&C server
 
 # Installation
 1. Install Git and Python 3 on your server.
-2. Clone the PYbot Github repository to your server via Git: `$ git clone https://github.com/WodxTV/PYbot.git`
+2. Clone the PYbot Github repository to your server via Git: `$ git clone https://github.com/WodxTV/PYbot.git`.
 3. Change the host address and C&C port in the configuration section in [bot.py](/bot.py) to your server address and C&C port.
 4. Start the CnC server by executing the command: `$ python cnc.py <cnc port>`.
 5. Add accounts in [logins.txt](/logins.txt) using the format: `username:password`.
